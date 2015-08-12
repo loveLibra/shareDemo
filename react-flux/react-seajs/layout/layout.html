@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Hello react</title>
+		<meta charset="utf-8">
+		<script type="text/javascript">
+	        (function (doc, win) {
+	            var docEl = doc.documentElement,
+	                resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+	                recalc = function () {
+	                    var clientWidth = docEl.clientWidth;
+	                    if (!clientWidth) {
+	                        return;
+	                    }
+	                    docEl.style.fontSize = 20 * (clientWidth / 320) + 'px';
+	                };
+	    
+	            if (!doc.addEventListener) {
+	                return;
+	            }
+	            win.addEventListener(resizeEvt, recalc, false);
+	            doc.addEventListener('DOMContentLoaded', recalc, false);
+	        })(document, window);
+	    </script>
+		<link rel="stylesheet" href="http://cdn.yoho.cn/yohobuy-mobile/1.1.4/index.css?v=12">
+	</head>
+	<body>
+		<div id="content"></div>
+		<script src="http://localhost:8000/static/js/sea.js?nowrap"></script>
+		<script>
+		    seajs.config({
+		        base: 'http://localhost:8000/'
+		    });
+		</script>
+		<script>
+			seajs.use('react-sea');
+		</script>
+	</body>
+</html>

@@ -1,0 +1,35 @@
+{
+  "name": "react-sea",
+  "version": "1.0.0",
+  "description": "Use React with seajs",
+  "keywords": [],
+  "homepage": "",
+  "author": "xuqi <xuqi9010@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "bugs": {
+    "url": ""
+  },
+  "licenses": "MIT",
+  "spm": {
+    "main": "react-sea.js",
+    "dependencies": {
+      "mlellipsis": "0.0.6",
+      "react": "0.13.3",
+      "lazyload": "1.9.6",
+      "jquery": "1.8.3"
+    },
+    "devDependencies": {
+      "expect.js": "0.3.1"
+    }
+  },
+  "devDependencies": {
+    "spm": "3"
+  },
+  "scripts": {
+    "test": "spm test",
+    "build": "spm build"
+  }
+}
