@@ -1,0 +1,32 @@
+{
+  "name": "flux-todo",
+  "version": "1.0.0",
+  "description": "flux demo of todos",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "browserify . -t [envify --NODE_ENV production]",
+    "start": "watchify -o js/bundle.js -v -d js/app.js"
+  },
+  "author": "xuqi",
+  "license": "ISC",
+  "dependencies": {
+    "classnames": "^2.1.3",
+    "flux": "^2.0.3",
+    "keymirror": "^0.1.1",
+    "object-assign": "^3.0.0",
+    "react": "^0.13.3"
+  },
+  "devDependencies": {
+    "browserify": "^11.0.1",
+    "envify": "^3.4.0",
+    "reactify": "^1.1.1",
+    "watchify": "^3.3.1"
+  },
+  "browserify": {
+    "transform": [
+      "reactify",
+      "envify"
+    ]
+  }
+}
