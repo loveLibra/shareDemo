@@ -19,9 +19,7 @@ React推荐使用JSX语法实现功能，因为JSX能定义简洁且我们熟知
 
 ### Simple Examples
 1. 第一个例子，运行后，我们在页面显示了*Hello,React*。So easy~来看看React的代码： 
-React.createClass声明了一个React的Component，注意命名为大驼峰，以区分HTML标签的小写命名。  
-createClass参数中必须至少包含一个render方法，返回组件的内容；然后通过React.render将组建渲染到页面'#content'元素内。  
-这里需要注意组件标签都是自闭合的。  
+React.createClass声明了一个React的Component，注意命名为大驼峰，以区分HTML标签的小写命名。createClass参数中必须至少包含一个render方法，返回组件的内容；然后通过React.render将组建渲染到页面'#content'元素内。这里需要注意组件标签都是自闭合的。  
 另外，对比`src/demo1.js`和`build/demo1.js`，来关注下JSX在React是如何工作和转化的，写在render内的jsx语法转化成了js的实现，HTML标签仍然可以用HTML标签直接书写，但是请注意是自闭合的（其实JSX中的HTML标签都是内置的React组件）。在下面的例子中我们会看到自定义组件也是同样的实现。
 
 2. 通过第一个例子，我们了解了两个React的API`React.createClass`和`React.render`。通过这两个API就可以进行简单的静态页面开发了。但是如果需要根据服务端数据进行渲染呢？接下来看第二个例子，第二个例子我们将演示在组件中如何使用和传递数据，感受下React的单向数据流的设计思想。  
