@@ -3,13 +3,13 @@
 ## React
 
 ### 介绍
-React是一个Fb和Instagram用来创建用户界面的JS库，它的设计是为了解决：构建随着时间数据不断变化的大规模应用程序。React的设计思想独特，性能强大，代码逻辑性强，逐渐吸引到越来越多的人的关注并且很快推广开来，目前Github上的Star已经达到26,161。  
+React是一个Fb和Instagram用来创建用户界面的JS库，它的设计是为了解决：构建随着时间数据不断变化的大规模应用程序。React的设计思想独特，性能强大，代码逻辑性强，逐渐吸引到越来越多的人的关注并且很快推广开来，目前Github上的Star已经达到26,384。  
 
 React很好的阐释了组件化的思想，开发的第一步就是将用户界面拆分为一个组件树，简单明了，可以有效避免duplicate-code，清晰的实现组件复用。  
 
-React采用了VirtualDOM技术，每次数据更新的时候重新生成一个VirtualDOM，然后对两颗VirtualDOM做Diff，将变化的部分更新到DOM中。  
+React采用了VirtualDOM技术，每次数据更新的时候重新生成一个VirtualDOM，然后对两棵VirtualDOM做Diff，将变化的部分更新到DOM中。  
 
-React推荐使用JSX语法实现功能，因为JSX能定义简洁且我们熟知的保函属性的树状结构语法，JSX=JS+XML，JSX构建的VIEW更贴近实际HTML的结构，易于使用，并且速度更快。
+React推荐使用JSX语法实现功能，因为JSX能定义简洁且我们熟知的包含属性的树状结构语法，JSX=JS+XML，JSX构建的VIEW更贴近实际HTML的结构，易于使用，并且速度更快。
 
 ### How To Use React？
 我们从几个使用场景去简单说明一下React的使用：  
@@ -27,7 +27,7 @@ React.createClass声明了一个React的Component，注意命名为大驼峰，�
 再来看两个方法`componentDidMount`和`componentWillUnmount`，前者表示组件被挂载到DOM树中，后者表示卸载。此处我在挂载完成后设置了计时开始以及绑定了一个click事件到按钮中。  
 获取按钮dom对象的方法是`this.refs.xx.getDOMNode()`，按钮点击效果是将此组件从content中卸载；组件中通过`this`可以得到组件的引用。
 
-3. 接下来看第三个例子，第三个栗子主要是让大家了解下父子组件的嵌套...  
+3. 接下来看第三个例子，第三个栗子主要是让大家了解下自定义父子组件的嵌套...  
 页面分为三部分：输入框、按钮和一个TODO的列表。TodoList组件为TodoApp的子组件，并且TodoApp通过state传入数据到子组件中渲染Todo列表。父组件改变todos的值就可以去重新渲染列表
 
 ### 生命周期
@@ -35,7 +35,7 @@ React.createClass声明了一个React的Component，注意命名为大驼峰，�
 
 ### React Ending
 最后，react部分的内容仍然还有很多重要的内容没有详细的去讲，这里简单的提一下：
-1. 首先是产生用户交互的表单组件，与正常的表单标签的，这边会有一些不同的规则。比如input，非React实现中如果给input-value标签赋默认值，input会显示一个默认值但是能够修改，react中如果直接赋值字符串给value，会将input变为受限组件，用户的输入不会被响应；
+1. 首先是产生用户交互的表单组件，与正常的表单标签一样的，这边会有一些不同的规则。比如input，非React实现中如果给input-value标签赋默认值，input会显示一个默认值但是能够修改，react中如果直接赋值字符串给value，会将input变为受限组件，用户的输入不会被响应；
 2. 事件系统。React提供了与浏览器本地事件相同的属性和方法的虚拟事件对象，它是对底层事件的一个封装，没有兼容性问题...如果有需要访问底层浏览器事件对象可以使用nativeEvent访问；
 3. 验证。由于子组件会接收父组件的参数进行渲染页面，因此有必要对传入的参数类型进行验证防止渲染时因为参数类型问题或者值的问题造成页面渲染出错。React提供了完备的验证。例如`createClass({propTypes: {optionalArray: React.PropTypes.array...}})`会验证optionalArray为数组，详细内容自行探索；
 4. react也提供了一些插件方便正式使用中的各种情况，比如动画以及类名操作等
@@ -47,7 +47,7 @@ React内容到此结束，休息&QA
 -----------------------------------------------
 
 ## FLUX
-Flux是Fb用来构建客户端web应用的程序体系架构，依赖于前面提过的数据单向流动。相比于其他形式化的框架，FLUX更像是一种架构思想，类似于MVC的角色。  
+Flux是Fb用来构建客户端web应用的程序体系架构。相比于其他形式化的框架，FLUX更像是一种架构思想，类似于MVC的角色。  
 
 下面直接分析flux的核心工作流程：看图。流程很简单，4个节点，单向流动。  
 （图示后对照图详细解释demo）  
